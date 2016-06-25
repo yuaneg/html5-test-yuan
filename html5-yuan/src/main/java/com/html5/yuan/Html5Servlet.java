@@ -24,11 +24,22 @@ public class Html5Servlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter writer =response.getWriter();
 		a++;
-//		for(int i=0;i<10;i++){
-			writer.write("data: "+ "循环"+a +"\n\n");
-//			//刷新response 内容
+		String data1 = "data: "+ "第"+a +"次请求";
+		
+		for(int i=0;i<10;i++){
+			String data2 = "第"+i+"次循环\n\n";
+			//刷新response 内容
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				writer.close();
+				response.flushBuffer();
+				e.printStackTrace();
+			}
+			writer.write(data1 + data2);
 			response.flushBuffer();
-//		}	
+		}
+		writer.flush();
 		writer.close();
 	}
 }

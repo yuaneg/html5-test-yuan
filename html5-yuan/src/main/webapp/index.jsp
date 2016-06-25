@@ -9,10 +9,6 @@
 <body>
 	<div id="result"></div>
 	<div id="connect"></div>
-	
-	
-	
-	
 	<div>在连接建立状态下 值的改变是从response 中刷新获取到的 所有后台记得对 response 进行flush</div>
 </body>
 <script type="text/javascript">
@@ -20,7 +16,7 @@
 	if (typeof (EventSource) !== "undefined") {
 		var source = new EventSource("Html5Servlet");
 		source.onmessage = function(event) {
-			document.getElementById("result").innerHTML = event.data + "<br />";
+			document.getElementById("result").innerHTML = event.data +"<br />";
 		};
 		source.onopen = function(){
 			document.getElementById("connect").innerHTML = "连接已建立";
