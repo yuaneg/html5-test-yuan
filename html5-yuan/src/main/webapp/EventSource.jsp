@@ -15,6 +15,7 @@
 	//检测 浏览器是否支持消息传递
 	if (typeof (EventSource) !== "undefined") {
 		var source = new EventSource("Html5Servlet");
+		//当接收到的消息发生改变的时候
 		source.onmessage = function(event) {
 			document.getElementById("result").innerHTML = event.data +"<br />";
 		};
