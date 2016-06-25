@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Html5Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static int a = 0;
     public Html5Servlet() {
         super();
     }
@@ -22,16 +23,12 @@ public class Html5Servlet extends HttpServlet {
 		response.setContentType("text/event-stream");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter writer =response.getWriter();
-		for(int i=0;i<10;i++){
-			writer.write("data: "+ "循环"+i +"\n\n");
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			//对response 进行刷新
+		a++;
+//		for(int i=0;i<10;i++){
+			writer.write("data: "+ "寰幆"+a +"\n\n");
+//			//鍒锋柊response 鍐呭
 			response.flushBuffer();
-		}	
+//		}	
 		writer.close();
 	}
 }
