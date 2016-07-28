@@ -3,7 +3,8 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-	<servlet>
+<!--用注解的方式完成 servlet的配置-->
+<!-- 	<servlet>
 		<servlet-name>Html5Servlet</servlet-name>
 		<display-name>Html5Servlet</display-name>
 		<description></description>
@@ -12,8 +13,8 @@
 	<servlet-mapping>
 		<servlet-name>Html5Servlet</servlet-name>
 		<url-pattern>/Html5Servlet</url-pattern>
-	</servlet-mapping>
-	<welcome-file-list>
+	</servlet-mapping> -->
+<!-- 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+	</welcome-file-list> -->
 </web-app>

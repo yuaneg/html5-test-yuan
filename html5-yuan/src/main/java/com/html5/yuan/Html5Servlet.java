@@ -4,10 +4,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * 用注解的方式定义webServlet
+ * 定义两种访问的方式
+ * @author yuaneg
+ *
+ */
+@WebServlet(name="html5Servlet",urlPatterns={"/Html5Servlet","/html5"})
 public class Html5Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static int a = 0;
